@@ -40,9 +40,20 @@ body {
   font-weight: 500;
   margin-top: .4rem;
 }
-.publication-authors { margin-top: 1.4rem; }
-.author-block { font-weight: 600; }
-.publication-affiliations { color: #718096; margin-top: .3rem; }
+.publication-authors { margin-top: 1.4rem; line-height: 1.7; }
+.author-block {
+  font-weight: 600;
+  display: inline-block;
+  margin-right: .35rem;
+}
+.author-block sup { color: var(--accent); font-weight: 700; }
+.publication-affiliations {
+  color: #718096;
+  margin-top: .6rem;
+  line-height: 1.6;
+}
+.publication-affiliations span { display: inline-block; }
+.publication-affiliations sup { color: var(--accent); }
 
 .publication-links { margin-top: 1.8rem; }
 .publication-links .button {
