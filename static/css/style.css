@@ -4,6 +4,8 @@
   --left: #66CCBE;
   --right: #E27E97;
   --ink: #1a1a2e;
+  /* site title gradient: teal -> light periwinkle -> soft pink */
+  --title-grad: linear-gradient(90deg, #5FD3CE 0%, #8FC3EC 28%, #B9BEE6 55%, #E9A9C6 80%, #F0A8C2 100%);
 }
 
 html { scroll-behavior: smooth; }
@@ -30,7 +32,7 @@ body {
   font-family: 'Castoro', 'Google Sans', serif;
   font-weight: 700;
   letter-spacing: -0.5px;
-  background: linear-gradient(90deg, var(--left), var(--accent), var(--right));
+  background: var(--title-grad);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -46,7 +48,7 @@ body {
   font-weight: 600;
   line-height: 1.2;
   margin: 1rem 0;            /* equal gap above (title) and below (authors) */
-  background: linear-gradient(90deg, var(--left), var(--accent), var(--right));
+  background: var(--title-grad);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
