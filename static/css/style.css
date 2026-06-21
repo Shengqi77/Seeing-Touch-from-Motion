@@ -39,19 +39,19 @@ body {
   color: #4a5568 !important;
   font-weight: 500;
   margin-top: .4rem;
+  margin-bottom: 0;   /* gap to venue is controlled by .venue-badge margin */
 }
 .venue-badge {
-  display: inline-block;
-  margin-top: 1rem;
-  padding: .35rem 1.1rem;
-  border-radius: 999px;
-  font-weight: 700;
-  letter-spacing: .08em;
-  color: #fff;
+  font-size: 2rem;            /* same as the .is-3 subtitle */
+  font-weight: 600;
+  line-height: 1.2;
+  margin: 1rem 0;            /* equal gap above (title) and below (authors) */
   background: linear-gradient(90deg, var(--left), var(--accent), var(--right));
-  box-shadow: 0 4px 14px rgba(43,108,176,.25);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
-.publication-authors { margin-top: 1.4rem; line-height: 1.7; }
+.publication-authors { margin-top: 0; line-height: 1.7; }
 .author-block {
   font-weight: 600;
   display: inline-block;
