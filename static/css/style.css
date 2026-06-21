@@ -106,7 +106,7 @@ body {
   height: 4px;
   margin: .7rem auto 0;
   border-radius: 2px;
-  background: linear-gradient(90deg, var(--left), var(--right));
+  background: var(--title-grad);
 }
 
 /* ---------- Contributions ---------- */
@@ -139,7 +139,7 @@ body {
   color: #fff;
 }
 .vid-label.baseline { background: #8a94a6; }
-.vid-label.ours { background: linear-gradient(90deg, var(--left), var(--right)); }
+.vid-label.ours { background: var(--title-grad); color: var(--ink); }
 .compare-video {
   width: 100%;
   border-radius: 10px;
@@ -149,8 +149,8 @@ body {
 }
 .baseline-tag { background: #8a94a6; color: #fff; font-weight: 600; }
 .ours-tag {
-  background: linear-gradient(90deg, var(--left), var(--right));
-  color: #fff; font-weight: 600;
+  background: var(--title-grad);
+  color: var(--ink); font-weight: 600;
 }
 
 /* ---------- Video placeholder ---------- */
