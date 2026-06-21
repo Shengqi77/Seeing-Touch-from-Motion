@@ -98,7 +98,38 @@ body {
 }
 .contrib-icon { color: var(--accent); margin-bottom: .5rem; }
 
-/* ---------- Video ---------- */
+/* ---------- Video comparison ---------- */
+.task-block { margin-bottom: 2.6rem; }
+.task-title {
+  text-align: center;
+  margin-bottom: 1rem !important;
+  color: var(--ink);
+}
+.vid-label {
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: .02em;
+  padding: .35rem 0;
+  margin-bottom: .6rem;
+  border-radius: 8px;
+  color: #fff;
+}
+.vid-label.baseline { background: #8a94a6; }
+.vid-label.ours { background: linear-gradient(90deg, var(--left), var(--right)); }
+.compare-video {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 8px 28px rgba(0,0,0,.10);
+  background: #000;
+  display: block;
+}
+.baseline-tag { background: #8a94a6; color: #fff; font-weight: 600; }
+.ours-tag {
+  background: linear-gradient(90deg, var(--left), var(--right));
+  color: #fff; font-weight: 600;
+}
+
+/* ---------- Video placeholder ---------- */
 .video-placeholder {
   position: relative;
   width: 100%;

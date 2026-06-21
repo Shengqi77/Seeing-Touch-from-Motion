@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ViTacMotor: Seeing Touch from Motion</title>
+  <title>Seeing Touch from Motion</title>
   <meta name="description"
         content="ViTacMotor: A Unified Modality-Aware Visuo-Tactile Policy with Tactile Motion Correlation for contact-rich manipulation.">
-  <meta property="og:title" content="ViTacMotor: Seeing Touch from Motion"/>
+  <meta property="og:title" content="Seeing Touch from Motion"/>
   <meta property="og:description" content="A Unified Modality-Aware Visuo-Tactile Policy with Tactile Motion Correlation."/>
   <meta property="og:image" content="static/images/teaser.png"/>
   <meta name="twitter:card" content="summary_large_image"/>
@@ -220,48 +220,84 @@
 <!-- ===================== VIDEO ===================== -->
 <section class="section" id="video">
   <div class="container is-max-desktop">
-    <h2 class="title is-3 has-text-centered">Video Demonstrations</h2>
-    <p class="has-text-centered mb-5 subtitle is-6">Rollouts of ViTacMotor on the four contact-rich manipulation tasks.</p>
-    <div class="columns is-multiline">
-      <div class="column is-half">
-        <div class="video-placeholder">
-          <div class="video-placeholder-inner">
-            <i class="fas fa-video fa-2x"></i>
-            <p>Tube Collection</p>
-            <span class="tag is-light">video coming soon</span>
-          </div>
+    <h2 class="title is-3 has-text-centered">Video Comparisons</h2>
+    <p class="has-text-centered mb-5 subtitle is-6">
+      Side-by-side rollouts: <span class="tag baseline-tag">Vision-Only Baseline</span>
+      vs. <span class="tag ours-tag">ViTacMotor (Ours)</span> on each contact-rich task.
+    </p>
+
+    <!-- ===== Task 1 ===== -->
+    <div class="task-block">
+      <h3 class="title is-4 task-title">Task 1: Tube Collection</h3>
+      <div class="columns is-variable is-4">
+        <div class="column is-half">
+          <p class="vid-label baseline">Vision-Only Baseline</p>
+          <video class="compare-video" controls autoplay muted loop playsinline>
+            <source src="static/videos/task1_baseline.mp4" type="video/mp4">
+          </video>
         </div>
-        <!-- Replace the placeholder above with:
-        <video controls muted loop playsinline poster="static/images/setup.png">
-          <source src="static/videos/tube_collection.mp4" type="video/mp4">
-        </video>
-        -->
-      </div>
-      <div class="column is-half">
-        <div class="video-placeholder">
-          <div class="video-placeholder-inner">
-            <i class="fas fa-video fa-2x"></i>
-            <p>Whiteboard Erasing</p>
-            <span class="tag is-light">video coming soon</span>
-          </div>
+        <div class="column is-half">
+          <p class="vid-label ours">ViTacMotor (Ours)</p>
+          <video class="compare-video" controls autoplay muted loop playsinline>
+            <source src="static/videos/task1_ours.mp4" type="video/mp4">
+          </video>
         </div>
       </div>
-      <div class="column is-half">
-        <div class="video-placeholder">
-          <div class="video-placeholder-inner">
-            <i class="fas fa-video fa-2x"></i>
-            <p>Lightbulb Insertion</p>
-            <span class="tag is-light">video coming soon</span>
-          </div>
+    </div>
+
+    <!-- ===== Task 2 (placeholder) ===== -->
+    <div class="task-block">
+      <h3 class="title is-4 task-title">Task 2</h3>
+      <div class="columns is-variable is-4">
+        <div class="column is-half">
+          <p class="vid-label baseline">Vision-Only Baseline</p>
+          <div class="video-placeholder"><div class="video-placeholder-inner">
+            <i class="fas fa-video fa-2x"></i><span class="tag is-light">video coming soon</span>
+          </div></div>
+        </div>
+        <div class="column is-half">
+          <p class="vid-label ours">ViTacMotor (Ours)</p>
+          <div class="video-placeholder"><div class="video-placeholder-inner">
+            <i class="fas fa-video fa-2x"></i><span class="tag is-light">video coming soon</span>
+          </div></div>
         </div>
       </div>
-      <div class="column is-half">
-        <div class="video-placeholder">
-          <div class="video-placeholder-inner">
-            <i class="fas fa-video fa-2x"></i>
-            <p>Pencil Sharpening</p>
-            <span class="tag is-light">video coming soon</span>
-          </div>
+    </div>
+
+    <!-- ===== Task 3 (placeholder) ===== -->
+    <div class="task-block">
+      <h3 class="title is-4 task-title">Task 3</h3>
+      <div class="columns is-variable is-4">
+        <div class="column is-half">
+          <p class="vid-label baseline">Vision-Only Baseline</p>
+          <div class="video-placeholder"><div class="video-placeholder-inner">
+            <i class="fas fa-video fa-2x"></i><span class="tag is-light">video coming soon</span>
+          </div></div>
+        </div>
+        <div class="column is-half">
+          <p class="vid-label ours">ViTacMotor (Ours)</p>
+          <div class="video-placeholder"><div class="video-placeholder-inner">
+            <i class="fas fa-video fa-2x"></i><span class="tag is-light">video coming soon</span>
+          </div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== Task 4 (placeholder) ===== -->
+    <div class="task-block">
+      <h3 class="title is-4 task-title">Task 4</h3>
+      <div class="columns is-variable is-4">
+        <div class="column is-half">
+          <p class="vid-label baseline">Vision-Only Baseline</p>
+          <div class="video-placeholder"><div class="video-placeholder-inner">
+            <i class="fas fa-video fa-2x"></i><span class="tag is-light">video coming soon</span>
+          </div></div>
+        </div>
+        <div class="column is-half">
+          <p class="vid-label ours">ViTacMotor (Ours)</p>
+          <div class="video-placeholder"><div class="video-placeholder-inner">
+            <i class="fas fa-video fa-2x"></i><span class="tag is-light">video coming soon</span>
+          </div></div>
         </div>
       </div>
     </div>
