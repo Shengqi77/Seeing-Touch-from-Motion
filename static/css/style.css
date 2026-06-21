@@ -40,6 +40,17 @@ body {
   font-weight: 500;
   margin-top: .4rem;
 }
+.venue-badge {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: .35rem 1.1rem;
+  border-radius: 999px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  color: #fff;
+  background: linear-gradient(90deg, var(--left), var(--accent), var(--right));
+  box-shadow: 0 4px 14px rgba(43,108,176,.25);
+}
 .publication-authors { margin-top: 1.4rem; line-height: 1.7; }
 .author-block {
   font-weight: 600;
