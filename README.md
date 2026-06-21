@@ -2,7 +2,7 @@
 
 Project website for **"Seeing Touch from Motion: A Unified Modality-Aware Visuo-Tactile Policy with Tactile Motion Correlation"** (ECCV 2026).
 
-🔗 Live site: **https://shengqi77.github.io/ViTacMotor-Web/**
+🔗 Live site: **https://shengqi77.github.io/Seeing-Touch-from-Motion/**
 💻 Code (separate repo): https://github.com/Shengqi77/ViTacMotor
 
 ## Structure
@@ -21,7 +21,7 @@ Project website for **"Seeing Touch from Motion: A Unified Modality-Aware Visuo-
 
 ## Deploy / update
 
-This site lives in the GitHub repo **Shengqi77/ViTacMotor-Web** with remote already set.
+This site lives in the GitHub repo **Shengqi77/Seeing-Touch-from-Motion** with remote already set.
 To publish changes:
 
 ```bash
@@ -31,7 +31,7 @@ git push origin main
 ```
 
 GitHub Pages (Settings → Pages → Deploy from a branch → `main` / `(root)`) rebuilds in ~1 min.
-Live at `https://shengqi77.github.io/ViTacMotor-Web/`.
+Live at `https://shengqi77.github.io/Seeing-Touch-from-Motion/`.
 
 ## To finish later
 
