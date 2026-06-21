@@ -1,0 +1,163 @@
+:root {
+  --accent: #2b6cb0;
+  --accent-soft: #ebf3fb;
+  --left: #66CCBE;
+  --right: #E27E97;
+  --ink: #1a1a2e;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Noto Sans', 'Google Sans', -apple-system, sans-serif;
+  color: var(--ink);
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  background: linear-gradient(160deg, #f7fafc 0%, #eef2f7 100%);
+  border-bottom: 1px solid #e2e8f0;
+  padding-top: 2.5rem;
+}
+.eyebrow {
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 700;
+  margin-bottom: .6rem !important;
+}
+.publication-title {
+  font-family: 'Castoro', 'Google Sans', serif;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  background: linear-gradient(90deg, var(--left), var(--accent), var(--right));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.publication-subtitle {
+  color: #4a5568 !important;
+  font-weight: 500;
+  margin-top: .4rem;
+}
+.publication-authors { margin-top: 1.4rem; }
+.author-block { font-weight: 600; }
+.publication-affiliations { color: #718096; margin-top: .3rem; }
+
+.publication-links { margin-top: 1.8rem; }
+.publication-links .button {
+  margin: .25rem;
+  background: var(--ink);
+  border: none;
+  transition: transform .15s ease, background .15s ease;
+}
+.publication-links .button:hover {
+  background: var(--accent);
+  transform: translateY(-2px);
+}
+
+/* ---------- Figures ---------- */
+.image img {
+  border-radius: 10px;
+  box-shadow: 0 8px 28px rgba(0,0,0,.10);
+}
+.caption {
+  margin-top: 1rem;
+  font-size: .92rem;
+  color: #4a5568;
+  text-align: justify;
+  line-height: 1.55;
+}
+
+/* ---------- Section titles ---------- */
+.section .title.is-3 {
+  position: relative;
+  padding-bottom: .6rem;
+  margin-bottom: 1.8rem;
+}
+.section .title.is-3.has-text-centered::after {
+  content: "";
+  display: block;
+  width: 64px;
+  height: 4px;
+  margin: .7rem auto 0;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--left), var(--right));
+}
+
+/* ---------- Contributions ---------- */
+.contrib-box {
+  height: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 18px rgba(0,0,0,.06);
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+.contrib-box:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 26px rgba(0,0,0,.10);
+}
+.contrib-icon { color: var(--accent); margin-bottom: .5rem; }
+
+/* ---------- Video ---------- */
+.video-placeholder {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+  border-radius: 10px;
+  background: repeating-linear-gradient(45deg, #f0f4f8, #f0f4f8 12px, #e8eef4 12px, #e8eef4 24px);
+  border: 2px dashed #c5d2e0;
+}
+.video-placeholder-inner {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #7a8aa0;
+  gap: .5rem;
+}
+.video-placeholder-inner p { font-weight: 600; margin: 0; }
+.column video {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 8px 28px rgba(0,0,0,.10);
+}
+
+/* ---------- Tables ---------- */
+.results-table { font-size: .9rem; }
+.results-table th { text-align: center; vertical-align: middle; }
+.results-table td { text-align: center; vertical-align: middle; }
+.results-table td:first-child,
+.results-table th:first-child { text-align: left; }
+.group-header {
+  background: var(--ink);
+  color: #fff !important;
+  text-align: center !important;
+  letter-spacing: .03em;
+}
+.left-task { background: rgba(102, 204, 190, .18); text-align: center !important; }
+.right-task { background: rgba(226, 126, 151, .18); text-align: center !important; }
+.results-table tr.ours {
+  background: #fff7e6;
+  font-weight: 600;
+}
+.results-table tr.ours td { border-top: 2px solid #f0c36d; }
+
+/* ---------- BibTeX ---------- */
+.bibtex {
+  background: #1a1a2e;
+  color: #e6edf3;
+  border-radius: 10px;
+  padding: 1.3rem 1.5rem;
+  overflow-x: auto;
+}
+.bibtex code { color: #e6edf3; background: transparent; }
+
+/* ---------- Footer ---------- */
+.footer { background: #f7fafc; padding: 2rem 1.5rem; }
+
+@media (max-width: 768px) {
+  .publication-title { font-size: 2.1rem; }
+  .publication-subtitle { font-size: 1.2rem; }
+}

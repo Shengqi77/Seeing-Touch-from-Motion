@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ViTacMotor: Seeing Touch from Motion</title>
+  <meta name="description"
+        content="ViTacMotor: A Unified Modality-Aware Visuo-Tactile Policy with Tactile Motion Correlation for contact-rich manipulation.">
+  <meta property="og:title" content="ViTacMotor: Seeing Touch from Motion"/>
+  <meta property="og:description" content="A Unified Modality-Aware Visuo-Tactile Policy with Tactile Motion Correlation."/>
+  <meta property="og:image" content="static/images/teaser.png"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+
+<!-- ===================== HERO ===================== -->
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <p class="subtitle is-5 eyebrow">ECCV 2026 Submission</p>
+          <h1 class="title is-1 publication-title">
+            Seeing Touch from Motion
+          </h1>
+          <h2 class="subtitle is-3 publication-subtitle">
+            A Unified Modality-Aware Visuo-Tactile Policy<br>with Tactile Motion Correlation
+          </h2>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">Anonymous Authors</span>
+          </div>
+          <div class="is-size-6 publication-affiliations">
+            <span>Under Review at ECCV 2026</span>
+          </div>
+
+          <!-- Links -->
+          <div class="publication-links">
+            <span class="link-block">
+              <a href="static/pdfs/ViTacMotor.pdf" class="external-link button is-rounded is-dark">
+                <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                <span>Paper</span>
+              </a>
+            </span>
+            <span class="link-block">
+              <a href="#" class="external-link button is-rounded is-dark">
+                <span class="icon"><i class="ai ai-arxiv"></i></span>
+                <span>arXiv</span>
+              </a>
+            </span>
+            <span class="link-block">
+              <a href="https://github.com/Shengqi77/ViTacMotor" class="external-link button is-rounded is-dark">
+                <span class="icon"><i class="fab fa-github"></i></span>
+                <span>Code</span>
+              </a>
+            </span>
+            <span class="link-block">
+              <a href="#video" class="external-link button is-rounded is-dark">
+                <span class="icon"><i class="fas fa-video"></i></span>
+                <span>Video</span>
+              </a>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== TEASER ===================== -->
+<section class="section pt-0">
+  <div class="container is-max-desktop">
+    <figure class="image">
+      <img src="static/images/teaser.png" alt="Tactile Motion Correlation overview">
+    </figure>
+    <p class="caption">
+      <b>Tactile Motion Correlation (TMC).</b> Fine-grained contact states such as
+      <i>making contact</i> and <i>releasing contact</i> look nearly identical in raw tactile images
+      and even in cumulative motion. By correlating <i>transient</i> and <i>cumulative</i> motion
+      (same vs. opposite direction), TMC explicitly resolves this ambiguity, providing
+      highly discriminative cues for contact-rich manipulation.
+    </p>
+  </div>
+</section>
+
+<!-- ===================== ABSTRACT ===================== -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3 has-text-centered">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Visuo-tactile policies leveraging optical tactile sensors have shown great promise in
+            contact-rich manipulation. These sensors achieve high spatial resolution and
+            multi-dimensional force sensing by using an internal camera to monitor the deformation
+            of their elastic gel surface, thereby indirectly inferring tactile cues. Despite their
+            advantages, extracting the <b>fine-grained contact states</b> necessary for contact-rich
+            manipulation remains an open challenge. Existing methods typically use either raw images
+            or cumulative motion fields, both of which are prone to perception ambiguity: raw images
+            mainly capture appearance changes, while cumulative motion only reflects aggregate gel
+            deformation. As a result, distinct contact states can exhibit highly similar patterns.
+          </p>
+          <p>
+            To address this, we explore the dynamic priors of tactile motion and discover that the
+            <b>correlation between transient and cumulative motion</b> can explicitly distinguish
+            fine-grained contact states. Based on this insight, we propose a motion-aware tactile
+            representation, <b>Tactile Motion Correlation (TMC)</b>. Beyond representation, effective
+            fusion of tactile and visual modalities is also critical. We take advantage of the
+            <b>Mixture-of-Transformers (MoT)</b> architecture and propose <b>ViTacMotor</b>, a unified
+            yet modality-aware visuo-tactile policy that captures cross-modal complementarity while
+            preserving modality-specific properties. Extensive experiments on four challenging
+            contact-rich manipulation tasks demonstrate the superior performance of our method.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CONTRIBUTIONS ===================== -->
+<section class="section pt-0">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3 has-text-centered">Contributions</h2>
+        <div class="columns">
+          <div class="column">
+            <div class="box contrib-box">
+              <span class="icon is-large contrib-icon"><i class="fas fa-wave-square fa-2x"></i></span>
+              <h3 class="title is-5">Tactile Motion Correlation</h3>
+              <p>We reveal that the correlation between transient and cumulative tactile motions
+                explicitly distinguishes fine-grained contact states, resolving the perceptual
+                ambiguity of prior representations.</p>
+            </div>
+          </div>
+          <div class="column">
+            <div class="box contrib-box">
+              <span class="icon is-large contrib-icon"><i class="fas fa-layer-group fa-2x"></i></span>
+              <h3 class="title is-5">Modality-Aware Fusion</h3>
+              <p>A unified MoT-based visuo-tactile policy that captures cross-modal interactions
+                while preserving the unique properties of each modality.</p>
+            </div>
+          </div>
+          <div class="column">
+            <div class="box contrib-box">
+              <span class="icon is-large contrib-icon"><i class="fas fa-robot fa-2x"></i></span>
+              <h3 class="title is-5">Real-World Validation</h3>
+              <p>Extensive experiments on four challenging real-world contact-rich tasks with two
+                different optical tactile sensors demonstrate superior performance and robustness.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== METHOD ===================== -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Method</h2>
+    <figure class="image">
+      <img src="static/images/method.png" alt="ViTacMotor method overview">
+    </figure>
+    <p class="caption">
+      <b>Overview of ViTacMotor.</b> (a) TMC models the correlation between transient and cumulative
+      tactile motion through their dot product to explicitly distinguish fine-grained contact states.
+      (b) A unified yet modality-aware visuo-tactile fusion framework built on the Mixture-of-Transformers
+      architecture captures cross-modal complementarity while preserving the unique properties of each modality.
+    </p>
+  </div>
+</section>
+
+<!-- ===================== TMC ANALYSIS ===================== -->
+<section class="section pt-0">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Why Tactile Motion Correlation Works</h2>
+    <figure class="image">
+      <img src="static/images/tmc_analysis.png" alt="Analysis of tactile motion correlation">
+    </figure>
+    <p class="caption">
+      <b>Analysis of TMC properties (Daimon sensor).</b> (a) Raw images and cumulative motion are
+      ambiguous across contact states, while the transient&ndash;cumulative correlation is highly
+      discriminative. (b) The dot product cleanly separates contact states in 3D distribution.
+      (c) The dot-product magnitude is positively correlated with contact force.
+    </p>
+    <div class="content has-text-justified mt-4">
+      <ul>
+        <li><b>Making contact:</b> transient and cumulative motion align &rarr; positive dot product.</li>
+        <li><b>Releasing contact:</b> the two motions oppose &rarr; negative dot product.</li>
+        <li><b>Stable contact / no contact:</b> transient motion vanishes &rarr; dot product near zero.</li>
+        <li><b>Sliding:</b> clear positive&ndash;negative spatial separation reveals the sliding direction.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SETUP & TASKS ===================== -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Hardware Setup &amp; Tasks</h2>
+    <figure class="image">
+      <img src="static/images/setup.png" alt="Real-world experimental setup">
+    </figure>
+    <p class="caption">
+      <b>Real-world setup.</b> (a) A 6-DoF Agilex arm with a 1-DoF gripper, two cameras (wrist &amp; third-view),
+      and two optical tactile sensors. (b) Two sensors, <b>Daimon</b> and <b>Xense</b>, with distinct markers and gels.
+      (c) Four contact-rich tasks: tube collection, whiteboard erasing, lightbulb insertion, and pencil sharpening.
+    </p>
+  </div>
+</section>
+
+<!-- ===================== VIDEO ===================== -->
+<section class="section" id="video">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Video Demonstrations</h2>
+    <p class="has-text-centered mb-5 subtitle is-6">Rollouts of ViTacMotor on the four contact-rich manipulation tasks.</p>
+    <div class="columns is-multiline">
+      <div class="column is-half">
+        <div class="video-placeholder">
+          <div class="video-placeholder-inner">
+            <i class="fas fa-video fa-2x"></i>
+            <p>Tube Collection</p>
+            <span class="tag is-light">video coming soon</span>
+          </div>
+        </div>
+        <!-- Replace the placeholder above with:
+        <video controls muted loop playsinline poster="static/images/setup.png">
+          <source src="static/videos/tube_collection.mp4" type="video/mp4">
+        </video>
+        -->
+      </div>
+      <div class="column is-half">
+        <div class="video-placeholder">
+          <div class="video-placeholder-inner">
+            <i class="fas fa-video fa-2x"></i>
+            <p>Whiteboard Erasing</p>
+            <span class="tag is-light">video coming soon</span>
+          </div>
+        </div>
+      </div>
+      <div class="column is-half">
+        <div class="video-placeholder">
+          <div class="video-placeholder-inner">
+            <i class="fas fa-video fa-2x"></i>
+            <p>Lightbulb Insertion</p>
+            <span class="tag is-light">video coming soon</span>
+          </div>
+        </div>
+      </div>
+      <div class="column is-half">
+        <div class="video-placeholder">
+          <div class="video-placeholder-inner">
+            <i class="fas fa-video fa-2x"></i>
+            <p>Pencil Sharpening</p>
+            <span class="tag is-light">video coming soon</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== QUALITATIVE RESULTS ===================== -->
+<section class="section pt-0">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Qualitative Results</h2>
+    <figure class="image">
+      <img src="static/images/qualitative.png" alt="Qualitative policy execution results">
+    </figure>
+    <p class="caption">
+      <b>Policy execution.</b> ViTacMotor with two tactile sensors (Daimon and Xense) on four
+      contact-rich manipulation tasks: tube collection, whiteboard erasing, lightbulb insertion, and pencil sharpening.
+    </p>
+  </div>
+</section>
+
+<!-- ===================== QUANTITATIVE RESULTS ===================== -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Quantitative Comparison</h2>
+    <p class="has-text-centered subtitle is-6 mb-4">
+      Success rate (%) over 15 trials. <b>Best</b> per column in bold; numbers in parentheses are training demos.
+    </p>
+    <div class="table-container">
+      <table class="table is-fullwidth is-hoverable results-table">
+        <thead>
+          <tr><th colspan="8" class="group-header">Tasks Requiring In-Hand State Information</th></tr>
+          <tr>
+            <th rowspan="2">Method</th>
+            <th colspan="4" class="left-task">Tube Collection (35)</th>
+            <th colspan="3" class="right-task">Lightbulb Insertion (60)</th>
+          </tr>
+          <tr>
+            <th>Grasp</th><th>1st Hole</th><th>2nd Hole</th><th>Whole</th>
+            <th>Align</th><th>Insert</th><th>Whole</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>ACT*</td><td>66.7</td><td>60.0</td><td>53.3</td><td>53.3</td><td><b>60.0</b></td><td>13.3</td><td>13.3</td></tr>
+          <tr><td>DP*</td><td>73.3</td><td>53.3</td><td>40.0</td><td>40.0</td><td>53.3</td><td>6.7</td><td>6.7</td></tr>
+          <tr><td>ACT + T</td><td>86.7</td><td>60.0</td><td>60.0</td><td>60.0</td><td><b>60.0</b></td><td>26.7</td><td>26.7</td></tr>
+          <tr><td>Policy Consensus</td><td>80.0</td><td>53.3</td><td>53.3</td><td>53.3</td><td>53.3</td><td>26.7</td><td>26.7</td></tr>
+          <tr><td>TactileACT</td><td><b>93.3</b></td><td>73.3</td><td>60.0</td><td>60.0</td><td><b>60.0</b></td><td><b>40.0</b></td><td><b>40.0</b></td></tr>
+          <tr class="ours"><td><b>ViTacMotor</b></td><td><b>93.3</b></td><td><b>80.0</b></td><td><b>73.3</b></td><td><b>73.3</b></td><td><b>60.0</b></td><td><b>40.0</b></td><td><b>40.0</b></td></tr>
+        </tbody>
+        <thead>
+          <tr><th colspan="8" class="group-header">Tasks Requiring Fine-Grained Force Control</th></tr>
+          <tr>
+            <th rowspan="2">Method</th>
+            <th colspan="4" class="left-task">Whiteboard Erasing (50)</th>
+            <th colspan="3" class="right-task">Pencil Sharpening (40)</th>
+          </tr>
+          <tr>
+            <th>Grasp</th><th>1st Erase</th><th>2nd Erase</th><th>Whole</th>
+            <th>Sharpen</th><th>Holder</th><th>Whole</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>ACT*</td><td><b>100.0</b></td><td>60.0</td><td>46.7</td><td>46.7</td><td>40.0</td><td>33.3</td><td>33.3</td></tr>
+          <tr><td>DP*</td><td><b>100.0</b></td><td>66.7</td><td>40.0</td><td>40.0</td><td>33.3</td><td>33.3</td><td>33.3</td></tr>
+          <tr><td>ACT + T</td><td><b>100.0</b></td><td>80.0</td><td>60.0</td><td>60.0</td><td>40.0</td><td>40.0</td><td>40.0</td></tr>
+          <tr><td>Policy Consensus</td><td>93.3</td><td>73.3</td><td>66.7</td><td>66.7</td><td>33.3</td><td>33.3</td><td>33.3</td></tr>
+          <tr><td>TactileACT</td><td><b>100.0</b></td><td><b>86.7</b></td><td>73.3</td><td>73.3</td><td>46.7</td><td>46.7</td><td>46.7</td></tr>
+          <tr class="ours"><td><b>ViTacMotor</b></td><td><b>100.0</b></td><td><b>86.7</b></td><td><b>86.7</b></td><td><b>86.7</b></td><td><b>60.0</b></td><td><b>60.0</b></td><td><b>60.0</b></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Ablations -->
+    <div class="columns mt-5">
+      <div class="column">
+        <h3 class="title is-5 has-text-centered">Ablation Study</h3>
+        <table class="table is-fullwidth is-narrow is-hoverable results-table">
+          <thead>
+            <tr><th>Base</th><th>TMC</th><th>MoT</th><th>White. Erase</th><th>Tube Coll.</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>&#10003;</td><td></td><td></td><td>46.7</td><td>53.3</td></tr>
+            <tr><td>&#10003;</td><td>&#10003;</td><td></td><td>73.3</td><td>66.7</td></tr>
+            <tr><td>&#10003;</td><td></td><td>&#10003;</td><td>66.7</td><td>60.0</td></tr>
+            <tr class="ours"><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td><b>86.7</b></td><td><b>73.3</b></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="column">
+        <h3 class="title is-5 has-text-centered">TMC in Existing Policies</h3>
+        <table class="table is-fullwidth is-narrow is-hoverable results-table">
+          <thead>
+            <tr><th>Tactile Representation</th><th>ACT</th><th>DP</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Raw Image</td><td>60.0</td><td>53.3</td></tr>
+            <tr><td>Cumulative Motion</td><td>53.3</td><td>40.0</td></tr>
+            <tr class="ours"><td><b>TMC (Ours)</b></td><td><b>73.3</b></td><td><b>66.7</b></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== ROBUSTNESS ===================== -->
+<section class="section pt-0">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Robustness</h2>
+    <figure class="image">
+      <img src="static/images/robustness.png" alt="Robustness to environment and object variations">
+    </figure>
+    <p class="caption">
+      <b>Robustness to environment and object variations.</b> Under temporally varying, spatially
+      (non-)uniform lighting and object changes (different erasers/inks, a cylinder in place of the tube),
+      ViTacMotor still completes the tasks &mdash; thanks to TMC's motion-based, appearance-agnostic design.
+    </p>
+  </div>
+</section>
+
+<!-- ===================== BIBTEX ===================== -->
+<section class="section" id="bibtex">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3">BibTeX</h2>
+    <pre class="bibtex"><code>@inproceedings{vitacmotor2026,
+  title     = {Seeing Touch from Motion: A Unified Modality-Aware Visuo-Tactile
+               Policy with Tactile Motion Correlation},
+  author    = {Anonymous Authors},
+  booktitle = {Proceedings of the European Conference on Computer Vision (ECCV)},
+  year      = {2026}
+}</code></pre>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="footer">
+  <div class="container has-text-centered">
+    <p class="is-size-7">
+      Website template adapted from the
+      <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a> project page.
+      Content &copy; the authors.
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>
