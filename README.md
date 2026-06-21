@@ -2,7 +2,7 @@
 
 Project website for **"Seeing Touch from Motion: A Unified Modality-Aware Visuo-Tactile Policy with Tactile Motion Correlation"** (ECCV 2026 submission).
 
-🔗 Live site (after deploying): **https://shengqi77.github.io/ViTacMotor/**
+🔗 Live site (after deploying): **https://shengqi77.github.io/ViTacMotor_Web/**
 
 ## Structure
 
@@ -20,21 +20,16 @@ ViTacMotor/
 
 ## Deploy to GitHub Pages
 
-This folder is **not yet a git repo**. From inside `C:\Users\XSQ\ViTacMotor`:
+The repo is already initialized and committed locally with remote
+`https://github.com/Shengqi77/ViTacMotor_Web.git`. Create an **empty** repo named
+`ViTacMotor_Web` at github.com/Shengqi77 (no README/.gitignore/license), then push:
 
 ```bash
-git init
-git add .
-git commit -m "Add ViTacMotor project page"
-git branch -M main
-
-# Create the repo on github.com/Shengqi77 named "ViTacMotor" (empty, no README), then:
-git remote add origin https://github.com/Shengqi77/ViTacMotor.git
 git push -u origin main
 ```
 
 Then on GitHub: **Settings → Pages → Build and deployment → Source: "Deploy from a branch" → Branch: `main` / `(root)` → Save.**
-After ~1 minute the site is live at `https://shengqi77.github.io/ViTacMotor/`.
+After ~1 minute the site is live at `https://shengqi77.github.io/ViTacMotor_Web/`.
 
 ## To finish later
 
