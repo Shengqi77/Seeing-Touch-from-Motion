@@ -7,12 +7,12 @@ DST = r"C:/Users/XSQ/ViTacMotor/static/images"
 
 # map: source pdf (relative to BASE) -> output png name
 figs = {
-    "Figure_arxiv/Figure1_arxiv.pdf": "teaser.png",
-    "Figure_arxiv/Figure2_arxiv.pdf": "method.png",
-    "Figure_arxiv/Figure3_arxiv_1.pdf": "tmc_analysis.png",
-    "Figure_new/Figure4_small_1.pdf": "setup.png",
-    "Figure_new/Figure_5_exp_3_small.pdf": "qualitative.png",
-    "Figure_new/Figure_6_small_2.pdf": "robustness.png",
+    "Figure_arxiv_compress/Figure1_arxiv.pdf": "teaser.png",
+    "Figure_arxiv_compress/Figure2_arxiv.pdf": "method.png",
+    "Figure_arxiv_compress/Figure3_arxiv_2.pdf": "tmc_analysis.png",
+    "Figure_arxiv_compress/Figure4_arxiv.pdf": "setup.png",
+    "Figure_arxiv_compress/Figure5_arxiv.pdf": "qualitative.png",
+    "Figure_arxiv_compress/Figure6_arxiv.pdf": "robustness.png",
 }
 
 ZOOM = 3.0       # ~216 DPI
