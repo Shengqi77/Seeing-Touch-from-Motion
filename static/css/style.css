@@ -60,6 +60,9 @@ body {
   margin-right: .35rem;
 }
 .author-block sup { color: var(--accent); font-weight: 700; }
+/* Author names: same color whether or not they link to a homepage */
+.publication-authors a { color: inherit; text-decoration: none; }
+.publication-authors a:hover { text-decoration: underline; }
 .publication-affiliations {
   color: #718096;
   margin-top: .6rem;
